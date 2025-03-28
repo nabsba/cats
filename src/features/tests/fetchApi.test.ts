@@ -48,7 +48,7 @@ describe('fetchData', () => {
       status: 404,
     });
 
-    const result = await fetchData<any>(
+    const result = await fetchData(
       API_ENDPOINTS.cat.main,
       `${API_ENDPOINTS.cat.fact.params.maxLength}=140`,
     );
@@ -70,7 +70,7 @@ describe('fetchData', () => {
       new Error('Network Error'),
     );
 
-    const result = await fetchData<any>(
+    const result = await fetchData(
       API_ENDPOINTS.cat.main,
       `${API_ENDPOINTS.cat.fact.params.maxLength}=140`,
     );
@@ -90,7 +90,7 @@ describe('fetchData', () => {
   it('handles unknown error types gracefully', async () => {
     (global.fetch as jest.Mock).mockRejectedValueOnce('Not an Error object');
 
-    const result = await fetchData<any>(
+    const result = await fetchData(
       API_ENDPOINTS.cat.main,
       `${API_ENDPOINTS.cat.fact.params.maxLength}=140`,
     );
