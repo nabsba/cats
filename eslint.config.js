@@ -34,7 +34,8 @@ export default tseslint.config(
       ...eslintPluginReact.configs.recommended.rules, // React recommended rules
       ...eslintPluginJsxA11y.configs.recommended.rules, // JSX accessibility recommended rules
       'prettier/prettier': ['error'], 
-      'react/react-in-jsx-scope': 'off'
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
     },
   },
 )
