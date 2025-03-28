@@ -6,8 +6,8 @@ import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import eslintPluginReactRefresh from 'eslint-plugin-react-refresh';
 import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
-import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginReact from 'eslint-plugin-react';
+import eslintPrettier from 'prettier/@typescript-eslint'
 export default tseslint.config(
   { ignores: ['dist'] },
   {
@@ -35,7 +35,11 @@ export default tseslint.config(
       ...eslintPluginReact.configs.recommended.rules, // React recommended rules
       ...eslintPluginJsxA11y.configs.recommended.rules, // JSX accessibility recommended rules
       'prettier/prettier': ['error'], 
-      'react/react-in-jsx-scope': 'off'
+      'react/react-in-jsx-scope': 'off',
+      ...eslintPrettier.config.recommended.rules
     },
+    env: {
+    jest: true
+}
   },
 )
