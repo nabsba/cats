@@ -41,7 +41,13 @@ describe('ComponentWithLogicDataFetching', () => {
       statusCode: SUCCESS_STATUS.OK,
     };
     // eslint-disable-next-line prettier/prettier
-    render(<WrappedComponent isLoading={false} fetchResult={fetchResult}  text="Hello" />);
+    render(
+      <WrappedComponent
+        isLoading={false}
+        fetchResult={fetchResult}
+        text="Hello"
+      />,
+    );
     const component = screen.getByTestId('mock-component');
     expect(component).toBeInTheDocument();
   });
