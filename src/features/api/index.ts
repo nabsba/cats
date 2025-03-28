@@ -10,7 +10,7 @@ import {
   SUCCESS_MESSAGES_KEYS,
   SUCCESS_STATUS,
 } from './datas/success';
-import { FetchResult } from './types/fetchData';
+import { ErrorMessageKey, FetchResult } from './types/fetchData';
 
 export {
   API_ENDPOINTS,
@@ -22,4 +22,4 @@ export {
   SUCCESS_MESSAGES_KEYS,
   SUCCESS_STATUS,
 };
-export type { FetchResult };
+export type { FetchResult, ErrorMessageKey };
