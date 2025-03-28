@@ -1,3 +1,5 @@
+import { FormikProps } from 'formik';
+
 interface InputProps {
   id: string;
   name: string;
@@ -17,4 +19,21 @@ interface ErrorMessageProps {
 interface SubmitButtonProps {
   disabled?: boolean; // Optional prop to disable the button
 }
-export type { InputProps, LabelProps, ErrorMessageProps, SubmitButtonProps };
+
+interface FormFieldProps {
+  label: string;
+  name: keyof FormValues; // Ensures 'name' is a valid key
+  formik: FormikProps<FormValues>;
+}
+
+// Define form values type separately
+interface FormValues {
+  name: string;
+}
+export type {
+  InputProps,
+  LabelProps,
+  ErrorMessageProps,
+  SubmitButtonProps,
+  FormFieldProps,
+};
