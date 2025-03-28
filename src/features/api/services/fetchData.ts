@@ -1,5 +1,5 @@
-import { ERROR_MESSAGES_KEYS } from '../datas/errors';
-import { SUCCESS_MESSAGES_KEYS } from '../datas/success';
+import { ERROR_MESSAGES_KEYS, STATUS_SERVER_ERROR } from '../datas/errors';
+import { SUCCESS_MESSAGES_KEYS, SUCCESS_STATUS } from '../datas/success';
 import { ErrorMessageKey, FetchResult } from '../types/fetchData';
 
 async function fetchData<T>(
@@ -7,7 +7,6 @@ async function fetchData<T>(
   params: string,
 ): Promise<FetchResult<T>> {
   const fullUrl = `${url}?${params}`;
-
   try {
     const response = await fetch(fullUrl, {
       method: 'GET',
@@ -16,7 +15,12 @@ async function fetchData<T>(
       throw new Error(ERROR_MESSAGES_KEYS.SERVER_ERROR as string);
     }
     const data = (await response.json()) as T;
-    return { error: false, data, messageCode: SUCCESS_MESSAGES_KEYS.OK };
+    return {
+      error: false,
+      data,
+      messageCode: SUCCESS_MESSAGES_KEYS.OK,
+      statusCode: SUCCESS_STATUS.OK,
+    };
   } catch (error: unknown) {
     const errorMessage =
       error instanceof Error ? error.message : 'SERVER_ERROR';
@@ -27,6 +31,7 @@ async function fetchData<T>(
       messageCode: ERROR_MESSAGES_KEYS[errorMessage as ErrorMessageKey]
         ? ERROR_MESSAGES_KEYS[errorMessage as ErrorMessageKey]
         : ERROR_MESSAGES_KEYS.SERVER_ERROR,
+      statusCode: STATUS_SERVER_ERROR.SERVER_ERROR,
     };
   }
 }

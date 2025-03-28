@@ -11,6 +11,7 @@ import {
   SUCCESS_STATUS,
 } from './datas/success';
 import { ErrorMessageKey, FetchResult } from './types/fetchData';
+import ComponentWithLogicDataFetching from './components/LogicComponent';
 
 export {
   API_ENDPOINTS,
@@ -21,5 +22,6 @@ export {
   SUCCESS_MESSAGES,
   SUCCESS_MESSAGES_KEYS,
   SUCCESS_STATUS,
+  ComponentWithLogicDataFetching,
 };
 export type { FetchResult, ErrorMessageKey };

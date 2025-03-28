@@ -1,6 +1,12 @@
 import { API_ENDPOINTS } from 'features/api/datas/constants';
-import { ERROR_MESSAGES_KEYS } from 'features/api/datas/errors';
-import { SUCCESS_MESSAGES_KEYS } from 'features/api/datas/success';
+import {
+  ERROR_MESSAGES_KEYS,
+  STATUS_SERVER_ERROR,
+} from 'features/api/datas/errors';
+import {
+  SUCCESS_MESSAGES_KEYS,
+  SUCCESS_STATUS,
+} from 'features/api/datas/success';
 import { fetchData } from 'features/api/services/fetchData';
 
 // CHATGPT but CHECKED BY ME.
@@ -38,6 +44,7 @@ describe('fetchData', () => {
       error: false,
       data: mockData,
       messageCode: SUCCESS_MESSAGES_KEYS.OK,
+      statusCode: SUCCESS_STATUS.OK,
     });
   });
 
@@ -61,6 +68,7 @@ describe('fetchData', () => {
       error: true,
       data: null,
       messageCode: ERROR_MESSAGES_KEYS.SERVER_ERROR,
+      statusCode: STATUS_SERVER_ERROR.SERVER_ERROR,
     });
   });
 
@@ -83,6 +91,7 @@ describe('fetchData', () => {
       error: true,
       data: null,
       messageCode: ERROR_MESSAGES_KEYS.SERVER_ERROR,
+      statusCode: STATUS_SERVER_ERROR.SERVER_ERROR,
     });
   });
 
@@ -99,6 +108,7 @@ describe('fetchData', () => {
       error: true,
       data: null,
       messageCode: ERROR_MESSAGES_KEYS.SERVER_ERROR,
+      statusCode: STATUS_SERVER_ERROR.SERVER_ERROR,
     });
   });
 });
