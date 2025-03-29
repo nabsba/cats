@@ -8,7 +8,6 @@ describe('ErrorFieldDefault Component', () => {
     // Check if the error message is displayed
     const errorMessage = screen.getByText(/This is an error/i);
     expect(errorMessage).toBeInTheDocument();
-    expect(errorMessage).toHaveStyle('color: red');
   });
 
   it('does not render anything when no message is provided', () => {

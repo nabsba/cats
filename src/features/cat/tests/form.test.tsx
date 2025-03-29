@@ -52,7 +52,7 @@ describe('MyFormCat', () => {
     // !improvment  could target more explicitely label.
     expect(
       screen.getByText(
-        "Select the length of the cat fact you'd like to receive.",
+        "Select the length of the cat fact you'd like to receive:",
       ),
     ).toBeInTheDocument();
     expect(screen.getByTestId('input-length')).toBeInTheDocument();
