@@ -5,7 +5,11 @@ interface DefaultErrorProps {
 }
 
 const DefaultError: React.FC<DefaultErrorProps> = ({ messageCode }) => (
-  <div className="default_error">{ERROR_MESSAGES[messageCode]}</div>
+  <p>
+    {ERROR_MESSAGES[messageCode]
+      ? ERROR_MESSAGES[messageCode]
+      : ERROR_MESSAGES.SERVER_ERROR}
+  </p>
 );
 
 export default DefaultError;
