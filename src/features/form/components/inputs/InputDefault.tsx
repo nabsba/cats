@@ -8,6 +8,8 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   onBlur,
+  min,
+  placeHolder,
 }) => {
   return (
     <input
@@ -17,6 +19,8 @@ const Input: React.FC<InputProps> = ({
       value={value}
       onChange={onChange}
       onBlur={onBlur}
+      min={min}
+      placeholder={placeHolder}
     />
   );
 };

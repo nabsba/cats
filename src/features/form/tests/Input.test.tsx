@@ -64,4 +64,43 @@ describe('Input Component', () => {
     // Check if onBlur was called
     expect(handleBlur).toHaveBeenCalledTimes(1);
   });
+  it('renders a number input with min value of 20', () => {
+    render(
+      <Input
+        id="test-input"
+        name="test"
+        type="number"
+        value="25"
+        onChange={() => {}}
+        onBlur={() => {}}
+        min="20"
+      />,
+    );
+
+    // Check if the input is rendered with the correct value
+    const inputElement = screen.getByRole('spinbutton');
+    expect(inputElement).toHaveValue(25);
+  });
+
+  it('prevents entering a value less than the min value', () => {
+    render(
+      <Input
+        id="test-input"
+        name="test"
+        type="number"
+        value="20"
+        onChange={() => {}}
+        onBlur={() => {}}
+        min="20"
+      />,
+    );
+
+    const inputElement = screen.getByRole('spinbutton');
+
+    // Try to change the value to a number less than 20
+    fireEvent.change(inputElement, { target: { value: '15' } });
+
+    // Check if the value is not updated (it should stay 18 since 15 is less than the min value)
+    expect(inputElement).toHaveValue(20);
+  });
 });
