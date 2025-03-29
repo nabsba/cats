@@ -49,7 +49,6 @@ The interlocutor confirmed that they wanted a minimum of 20 characters to be spe
 
 In addition, I asked if I could further enforce a numeric input field to limit the user's input to numbers only. This would help narrow down the possibilities for the user and ensure they wouldn't receive multiple error messages unnecessarily. The interlocutor agreed with this suggestion, and thus, I proceeded to implement the input field to only accept numbers.
 
-I have also asked the 
 
 ---
 
@@ -100,7 +99,7 @@ The app is relatively simple, with basic data management and form handling. The 
 
 ## Screenshots
 
-![Cat Fact Application](./assets/screenshot.png)
+![Cat Fact Application](./public/assets/)
 
 ## Conclusion
 
