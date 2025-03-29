@@ -67,6 +67,7 @@ I have also asked the
 - **Formik**: A popular library for handling forms, including input validation.
 - **Yup**: A schema validation library used alongside Formik to validate the input field.
 - **React-testing-library**: A popular library for handling tests. 
+- **LINTER & PRETTIER**: Configured according to best practices and formatting recommendations.
 
 
 ## Validation Logic
