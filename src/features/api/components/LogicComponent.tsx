@@ -4,6 +4,7 @@ import ErrorComponent from 'features/errors/components/ErrorComponent';
 import { Loader } from 'features/loaders';
 import { SUCCESS_STATUS } from '../datas/success';
 
+// !improvment need proper typing as it's an important and sensible part of the code.
 const ComponentWithLogicDataFetching =
   (Component: any) =>
   ({ fetchResult, isLoading, typeLoader, typeError }: any) => {
@@ -17,8 +18,8 @@ const ComponentWithLogicDataFetching =
       return (
         <div data-testid="testID-error">
           <ErrorComponent
-            typeError={typeError}
-            messageCode={fetchResult.messageCode}
+           fetchResult={fetchResult}
+           typeError={typeError}
           />
         </div>
       );
