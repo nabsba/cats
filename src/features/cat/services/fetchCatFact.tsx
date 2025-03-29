@@ -19,7 +19,8 @@ export const handleFetchCat = async (
     setLoading(false);
   } catch (error: unknown) {
     const errorMessage =
-      error instanceof Error ? error.message : 'SERVER_ERROR';
+      error instanceof Error && error.message ? error.message : 'SERVER_ERROR';
+
     setFetchResult((prev) => ({
       ...prev,
       error: true,

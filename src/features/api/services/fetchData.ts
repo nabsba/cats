@@ -23,7 +23,7 @@ async function fetchData<T>(
     };
   } catch (error: unknown) {
     const errorMessage =
-      error instanceof Error ? error.message : 'SERVER_ERROR';
+      error instanceof Error && error.message ? error.message : 'SERVER_ERROR';
 
     return {
       error: true,
