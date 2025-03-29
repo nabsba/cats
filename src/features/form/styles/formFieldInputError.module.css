@@ -1,0 +1,6 @@
+.input_and_errorField {
+  position: relative;
+}
+.errorField {
+  position: absolute;
+}

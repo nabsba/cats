@@ -1,0 +1,19 @@
+import React from 'react';
+import { useFormik } from 'formik';
+
+
+const LogicForm = (WrappedComponent, config) =>  (WrappedComponent: any) => 
+   ({config { initialValues, validationSchema, onSubmit }}) => {
+    const formik = useFormik({
+      initialValues: initialValues || {},
+      validationSchema: validationSchema || null,
+      onSubmit: (values, actions) => {
+        onSubmit(values, actions); 
+      },
+      enableReinitialize: true, 
+    });
+    return <WrappedComponent formik={formik} {...props} />;
+  };
+
+
+export default LogicForm;

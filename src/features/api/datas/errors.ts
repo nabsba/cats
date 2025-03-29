@@ -1,0 +1,21 @@
+const ERROR_MESSAGES = {
+  SERVER_ERROR: 'Error server',
+  FORBIDDEN: "Access's user is not allowed. ",
+};
+
+//!improve duplicate with success
+const ERROR_MESSAGES_KEYS = {
+  SERVER_ERROR: 'SERVER_ERROR',
+  FORBIDDEN: 'FORBIDDEN',
+};
+
+const STATUS_SERVER_ERROR = {
+  SERVER_ERROR: 500,
+  NOT_FOUND: 404,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  BAD_REQUEST: 400,
+  NO_CONTENT: 204,
+};
+
+export { ERROR_MESSAGES, ERROR_MESSAGES_KEYS, STATUS_SERVER_ERROR };
