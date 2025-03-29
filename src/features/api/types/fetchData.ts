@@ -1,9 +1,9 @@
 import { ERROR_MESSAGES_KEYS } from '../datas/errors';
 import { SuccessMessageKey } from './datas';
 
-interface FetchResult<T> {
+interface FetchResult {
   error: boolean;
-  data: T | null;
+  data: CatFactData | object | null | string;
   messageCode: SuccessMessageKey | ErrorMessageKey;
   statusCode: number;
 }

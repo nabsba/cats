@@ -1,17 +1,14 @@
 import { fetchData, FetchResult } from 'features/api';
 import { API_ENDPOINTS } from 'features/api/datas/constants';
-import { CatFactData } from 'features/api/types/fetchData';
 import { logErrorAsyncMessage } from 'features/common';
 
 export const handleFetchCat = async (
   value: number,
-  setFetchResult: React.Dispatch<
-    React.SetStateAction<FetchResult<CatFactData | object>>
-  >,
+  setFetchResult: React.Dispatch<React.SetStateAction<FetchResult>>,
   setLoading: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   try {
-    const result: FetchResult<CatFactData> = await fetchData<CatFactData>(
+    const result: FetchResult = await fetchData(
       `${API_ENDPOINTS.cat.main}${API_ENDPOINTS.cat.fact.endPoint}`,
       `${API_ENDPOINTS.cat.fact.params.maxLength}=${value + 20}`,
     );

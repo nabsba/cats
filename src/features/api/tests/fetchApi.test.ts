@@ -31,7 +31,7 @@ describe('fetchData', () => {
       json: async () => mockData,
     });
 
-    const result = await fetchData<{ fact: string }>(
+    const result = await fetchData(
       API_ENDPOINTS.cat.main,
       `${API_ENDPOINTS.cat.fact.params.maxLength}=140`,
     );

@@ -3,10 +3,7 @@ import { SUCCESS_MESSAGES_KEYS, SUCCESS_STATUS } from '../datas/success';
 import { ErrorMessageKey, FetchResult } from '../types/fetchData';
 
 // !improvment add a max timeOut for the fetch
-async function fetchData<T>(
-  url: string,
-  params: string,
-): Promise<FetchResult<T>> {
+async function fetchData(url: string, params: string): Promise<FetchResult> {
   const fullUrl = `${url}?${params}`;
   try {
     const response = await fetch(fullUrl, {
@@ -15,7 +12,7 @@ async function fetchData<T>(
     if (!response.ok) {
       throw new Error(ERROR_MESSAGES_KEYS.SERVER_ERROR as string);
     }
-    const data = (await response.json()) as T;
+    const data = await response.json();
     return {
       error: false,
       data,

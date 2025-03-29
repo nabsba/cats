@@ -1,14 +1,11 @@
 import { ComponentWithLogicDataFetching, FetchResult } from 'features/api';
-import { CatFactData } from 'features/api/types/fetchData';
 import React, { useState } from 'react';
 import { handleFetchCat } from '../services/fetchCatFact';
 import CatInformation from './elements/CatInformation';
 import MyFormCat from './elements/Form';
 
 const Cat: React.FC = () => {
-  const [fetchResult, setFetchResult] = useState<
-    FetchResult<CatFactData | object>
-  >({
+  const [fetchResult, setFetchResult] = useState<FetchResult>({
     error: false,
     messageCode: '',
     data: null,
@@ -25,7 +22,12 @@ const Cat: React.FC = () => {
           handleFetchCat(value, setFetchResult, setLoading)
         }
       />
-      <Cat fetchResult={fetchResult} loading={loading} typeLoader={'spinner'} />
+      <Cat
+        fetchResult={fetchResult}
+        loading={loading}
+        typeLoader={'spinner'}
+        typeError={'server'}
+      />
     </>
   );
 };
