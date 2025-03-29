@@ -25,7 +25,7 @@ const Cat: React.FC = () => {
           handleFetchCat(value, setFetchResult, setLoading)
         }
       />
-      <Cat fetchResult={fetchResult} loading={loading} />
+      <Cat fetchResult={fetchResult} loading={loading} typeLoader={'spinner'} />
     </>
   );
 };
