@@ -99,7 +99,7 @@ The app is relatively simple, with basic data management and form handling. The 
 
 ## Screenshots
 
-![Cat Fact Application](./assets/screenshot.png)
+![Cat Fact Application](./public/assets/)
 
 ## Conclusion
 
