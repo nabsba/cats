@@ -2,7 +2,7 @@ import { FormFieldProps } from 'features/form/types/form';
 import ErrorFieldDefault from '../errors/ErrorFieldDefault';
 import Input from '../inputs/InputDefault';
 import LabelDefault from '../labels/labelDefault';
-
+import styles from '../../styles/formFieldInputError.module.css';
 const FormFieldInputAndError: React.FC<FormFieldProps> = ({
   label,
   name,
@@ -13,8 +13,8 @@ const FormFieldInputAndError: React.FC<FormFieldProps> = ({
 }) => (
   <div>
     <LabelDefault htmlFor={name} text={label} />
-    <div style={{ position: 'relative' }}>
-      {/* !improvment Create a specific input for each type to avoid violating the "O" in SOLID principles and to prevent adding unnecessary complexity with extra properties.  */}
+    <div className={styles['input_and_errorField']}>
+      {/* !refactor Create a specific input for each type to avoid violating the "O" in SOLID principles and to prevent adding unnecessary complexity with extra properties.  */}
       <Input
         id={name}
         name={name}
@@ -29,7 +29,7 @@ const FormFieldInputAndError: React.FC<FormFieldProps> = ({
         placeHolder={placeHolder}
       />
       {formik.touched[name] && formik.errors[name] && (
-        <div style={{ position: 'absolute', top: '1.5rem' }}>
+        <div className={styles['errorField']}>
           <ErrorFieldDefault message={formik.errors[name]} />
         </div>
       )}

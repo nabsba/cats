@@ -3,7 +3,7 @@ import { FormFieldInputAndError } from 'features/form';
 import SubmitButtonDefault from 'features/form/components/submits/SubmitDefault';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-
+import styles from '../../styles/MyFormCat.module.css';
 interface MyFormCatProps {
   handleSubmit: (value: number) => void;
 }
@@ -22,18 +22,20 @@ const MyFormCat: React.FC<MyFormCatProps> = ({ handleSubmit }) => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form
+      onSubmit={formik.handleSubmit}
+      id="form-cat"
+      className={styles['form-container']}
+    >
       <FormFieldInputAndError
         type="number"
-        label="Select the length of the cat fact you'd like to receive."
+        label="Select the length of the cat fact you'd like to receive:"
         name="length"
         placeHolder="Must be superior than 19"
         formik={formik}
         min={'20'}
       />
-      <div style={{ marginTop: '2rem' }}>
-        <SubmitButtonDefault disabled={!(formik.isValid && formik.dirty)} />
-      </div>
+      <SubmitButtonDefault disabled={!(formik.isValid && formik.dirty)} />
     </form>
   );
 };

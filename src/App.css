@@ -3,5 +3,9 @@ h1 {
 }
 
 input {
- width: 15vw;  /* Adjust padding to make space for the placeholder */
+  width: 15vw; /* Adjust padding to make space for the placeholder */
+}
+
+body {
+  margin-left: 1rem;
 }

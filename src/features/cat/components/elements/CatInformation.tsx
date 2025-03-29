@@ -1,11 +1,18 @@
-import { CatFactData } from 'features/api/types/fetchData';
+import styles from '../../styles/CatInformation.module.css'; // Import the CSS module
 
-/* eslint-disable */
+interface CatFactData {
+  fact: string;
+}
+
 const CatInformation: React.FC<{ data: CatFactData }> = ({ data }) => {
   return (
-    <div>
-      <h2>Random Cat Fact</h2>
-      {data && data.fact ? <p>{data.fact}</p> : <p> No message available</p>}
+    <div className={styles.container}>
+      <h3 className={styles.heading}>Random Cat Fact</h3>
+      {data && data.fact ? (
+        <span className={styles.fact}>&quot; {data.fact} &quot; </span>
+      ) : (
+        <span className={styles.noFact}>No message available</span>
+      )}
     </div>
   );
 };

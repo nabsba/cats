@@ -1,0 +1,29 @@
+.container {
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  margin-top: 0rem;
+}
+
+.fact {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.noFact {
+  color: #d9534f;
+  font-size: 1.1rem;
+  font-style: italic;
+}
