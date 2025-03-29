@@ -2,6 +2,7 @@ import { ERROR_MESSAGES_KEYS, STATUS_SERVER_ERROR } from '../datas/errors';
 import { SUCCESS_MESSAGES_KEYS, SUCCESS_STATUS } from '../datas/success';
 import { ErrorMessageKey, FetchResult } from '../types/fetchData';
 
+// !improvment add a max timeOut for the fetch
 async function fetchData<T>(
   url: string,
   params: string,
