@@ -1,17 +1,17 @@
-/* eslint-disable */
 import * as React from 'react';
 import { errors } from '../types/errors';
 import getError from './ListErrors';
 import styles from '../styles/error.module.css';
+import { ErrorMessageKey, FetchResult } from 'features/api';
 
 const ErrorComponent: React.FC<{
   typeError: errors;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  fetchResult: any;
+
+  fetchResult: FetchResult;
 }> = ({ typeError, fetchResult }) => {
   return (
     <div className={styles['error-container']}>
-      {getError(typeError, fetchResult.messageCode)}
+      {getError(typeError, fetchResult.messageCode as ErrorMessageKey)}
     </div>
   );
 };
