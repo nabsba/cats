@@ -19,9 +19,7 @@ const FormFieldInputAndError: React.FC<FormFieldProps> = ({
         id={name}
         name={name}
         type={type ? type : 'text'}
-        value={
-          (formik.values[name] as unknown) ? formik.values[name] : undefined
-        }
+        value={(formik.values[name] as unknown) ? formik.values[name] : ''}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         // this min proprety is not necessary for type text. What about other type such as "date" etc
